@@ -9,7 +9,7 @@ export const notesSlice = createSlice({
     reducers:{
         getNotes: (state, actions) =>{
             state.notes = [...state.notes, actions.payload]
-            console.log(state.notes)
+            // console.log(state.notes)
         }
     }
 })

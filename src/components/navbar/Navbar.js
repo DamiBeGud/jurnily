@@ -6,15 +6,15 @@ import { useDispatch } from 'react-redux'
 import { toggleAddNote} from '../../redux/reducers/toggler'
 
 
-const Navbar = () => {
+const Navbar = ({redirectCalendar, redirectNote}) => {
   const dispatch = useDispatch()
   return (
     <View style={styles.conteiner}>
       <View style={styles.screens}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={redirectNote}>
             <Text>Notes</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={redirectCalendar}>
             <Text>Calendar</Text>
         </TouchableOpacity>
       <TouchableOpacity onPress={()=>dispatch(toggleAddNote())}>

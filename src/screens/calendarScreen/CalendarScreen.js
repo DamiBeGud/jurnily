@@ -5,12 +5,12 @@ import  Animated from 'react-native-reanimated'
 
 import Header from '../../components/header/Header'
 
-const CalendarScreen = ({swipeGestureHandlerLeft,animatedConteinerStyle}) => {
+const CalendarScreen = ({swipeGestureHandlerLeft,animatedConteinerStyle, redirectNote}) => {
   return (
 
     <Animated.View style={[styles.view, animatedConteinerStyle]}>
         <SafeAreaView style={styles.safeAreaView}>
-          <Header></Header>
+          <Header redirectNote={redirectNote}></Header>
         </SafeAreaView>
       <PanGestureHandler onGestureEvent={swipeGestureHandlerLeft}>
         <Animated.View style={{

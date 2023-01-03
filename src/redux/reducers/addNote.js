@@ -1,4 +1,4 @@
-import { async } from '@firebase/util'
+
 import {createSlice} from '@reduxjs/toolkit'
 import urid from 'urid'
 
@@ -117,8 +117,6 @@ export const {
     itemReset,
     pushItemID,
     restOneToDo,
-    
-
                     } = addNoteSlice.actions
 
 export default addNoteSlice.reducer

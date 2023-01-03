@@ -9,18 +9,23 @@ import Notes from '../../components/notes/Notes'
 
 
 
-const NotesScreen = ({swipeGestureHandlerRight,animatedConteinerStyle, scrollNotesConteinerStyle}) => {
+const NotesScreen = ({swipeGestureHandlerRight,animatedConteinerStyle, scrollNotesConteinerStyle, redirectCalendar}) => {
 
   return (
     <Animated.View style={[styles.screen,animatedConteinerStyle]}>
     <SafeAreaView style={styles.safeAreaView}>
-    <Header></Header>
+    <Header redirectCalendar={redirectCalendar}></Header>
 
-    <View style={styles.view}>
+    {/* <View style={styles.view}>
     <Animated.View style={[styles.notes, scrollNotesConteinerStyle]}>
       <Notes></Notes>
     </Animated.View>
-    </View>
+    </View> */}
+<View>
+  <Notes></Notes>
+
+</View>
+
 
     </SafeAreaView>
 
@@ -28,7 +33,7 @@ const NotesScreen = ({swipeGestureHandlerRight,animatedConteinerStyle, scrollNot
         <Animated.View style={{
         position: "absolute",
         width: "100%",
-        height: 600,
+        height: 200,
         bottom:0,
         left: 0,
          }}/>

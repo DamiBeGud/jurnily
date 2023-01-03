@@ -13,6 +13,9 @@ export const togglerSlice = createSlice({
             note: false,
             toDo: false,
             schedual: false
+        },
+        home:{
+            xValue:0
         }
     },
     reducers:{

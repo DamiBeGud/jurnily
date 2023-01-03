@@ -4,7 +4,7 @@ import React from 'react'
 const ToDoListPreview = ({list}) => {
 
    
-    const createList = list.list?.map(item=>{
+    const createList = list.items?.map(item=>{
         
         return(
             <View style={styles.itemConteiner} key={item.id}>

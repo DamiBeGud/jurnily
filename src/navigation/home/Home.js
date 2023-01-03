@@ -32,8 +32,8 @@ const Home = () => {
         //   console.log(`${doc.id} => ${doc.data()}`);
         // console.log(JSON.stringify(doc.data()))
         
-        console.log(`${doc.id}`, doc.data())
-        dispatch(getNotes(doc.data()))
+        // console.log(` id: ${doc.id}, title: ${doc.data().title}, text: ${doc.data().text}`)
+        dispatch(getNotes({id: doc.id, title: doc.data().title, text:doc.data().text }))
       });
     }
     useEffect(()=>{
@@ -93,6 +93,12 @@ const Home = () => {
 
     })
 
+    function redirectCalendar(){
+        x.value = -width
+    }
+    function redirectNote(){
+        x.value= 0
+    }
 
     const animatedConteinerStyle = useAnimatedStyle(()=>({
         transform: [{translateX: withTiming(x.value, {duration: 100, easing : Easing.linear})}]
@@ -112,10 +118,12 @@ const Home = () => {
                 swipeGestureHandlerRight={swipeGestureHandlerRight}
                 animatedConteinerStyle={animatedConteinerStyle}
                 scrollNotesConteinerStyle={scrollNotesConteinerStyle}
+                redirectCalendar={redirectCalendar}
             ></NotesScreen>
             <CalendarScreen
                 swipeGestureHandlerLeft={swipeGestureHandlerLeft}
                 animatedConteinerStyle={animatedConteinerStyle}
+                redirectNote={redirectNote}
             ></CalendarScreen>
     
     {addNote && <AddNoteScreen />}

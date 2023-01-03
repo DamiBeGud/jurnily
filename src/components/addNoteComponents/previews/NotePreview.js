@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const NotePreview = ({note}) => {
     const{title, text} = note
@@ -16,7 +15,7 @@ const NotePreview = ({note}) => {
             </View> 
         </View>
         <View style={styles.noteConteiner}>
-            <Text style={styles.noteText}>{text}.</Text>
+            <Text style={styles.noteText}>{text}</Text>
         </View>
     </View>
   )
